@@ -25,7 +25,7 @@ const Controller = ({ term, handleSearch, toggleForm, handleFilter, view, change
           <ViewController view={view} changeView={changeView} />
         </Col>
         <Col md={{ size: 4 }} className='d-flex'>
-          <div className='ml-auto'>
+          <div style={{marginLeft: "auto"}}>
             <BulkController
               clearSelected={clearSelected}
               clearCompleted={clearCompleted}

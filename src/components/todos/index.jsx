@@ -48,7 +48,7 @@ export default class Todos extends Component {
     todo.isSelect = !todo.isSelect
     this.setState({ todos })
   }
-
+  
   toggleComplete = (todoId) => {
     const todos = [...this.state.todos]
     const todo = todos.find(todo => todo.id === todoId)
@@ -67,35 +67,6 @@ export default class Todos extends Component {
     this.setState({ searchTerm: searchValue })
   }
 
-  handleFilter = (filterValue) => {
-    this.setState({ filter: filterValue })
-  }
-
-  changeView = (e) => {
-    this.setState({
-      view: e.target.value
-    })
-  }
-
-  clearSelected = () => {
-    const todos = this.state.todos.filter(todo => !todo.isSelect)
-    this.setState({ todos })
-  }
-
-  clearCompleted = () => {
-    const todos = this.state.todos.filter(todo => !todo.isComplete)
-    this.setState({ todos })
-  }
-
-  reset = () => {
-    this.setState({
-      filter: 'all',
-      searchTerm: '',
-      view: 'list',
-      isOpenForm: false
-    })
-  }
-
   performSearch = () => {
     return this.state.todos.filter(todo =>
       todo.text
@@ -104,6 +75,10 @@ export default class Todos extends Component {
     )
   }
 
+  handleFilter = (filterValue) => {
+    this.setState({ filter: filterValue })
+  }
+  
   performFilter = (todos) => {
     const { filter } = this.state
     if (filter === 'completed') {
@@ -115,15 +90,40 @@ export default class Todos extends Component {
     }
   }
 
+  clearSelected = () => {
+    const todos = this.state.todos.filter(todo => !todo.isSelect)
+    this.setState({ todos })
+  }
+  
+  clearCompleted = () => {
+    const todos = this.state.todos.filter(todo => !todo.isComplete)
+    this.setState({ todos })
+  }
+  
+  reset = () => {
+    this.setState({
+      filter: 'all',
+      searchTerm: '',
+      view: 'list',
+      isOpenForm: false
+    })
+  }
+  
   createTodo = (todo) => {
     todo.id = shortid.generate()
     todo.time = new Date()
     todo.isComplete = false
     todo.isSelect = false
-
+    
     const todos = [todo, ...this.state.todos]
     this.setState({ todos })
     this.toggleForm()
+  }
+  
+  changeView = (e) => {
+    this.setState({
+      view: e.target.value
+    })
   }
 
   getView = () => {

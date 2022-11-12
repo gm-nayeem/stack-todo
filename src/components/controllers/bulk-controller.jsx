@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 const BulkController = ({clearSelected, clearCompleted, reset}) => {
   return (
     <ButtonGroup>
-        <Button color='danger' onClick={() => clearSelected('clearSelected')}>Clear Selected</Button>
-        <Button color='danger' onClick={() => clearCompleted('clearCompleted')}>Clear Completed</Button>
-        <Button color='danger' onClick={() => reset('reset')}>Reset</Button>
+        <Button color='danger' onClick={clearSelected}>Clear Selected</Button>
+        <Button color='danger' onClick={clearCompleted}>Clear Completed</Button>
+        <Button color='danger' onClick={reset}>Reset</Button>
     </ButtonGroup>
   )
 }

@@ -3,7 +3,6 @@ import {ListGroup, ListGroupItem, Input, Button} from 'reactstrap'
 import PropTypes from 'prop-types'
 
 const ListItem = ({todo, toggleSelect, toggleComplete}) => {
-    
   return (
     <ListGroupItem className='d-flex align-items-center'>
         <Input 
@@ -17,7 +16,8 @@ const ListItem = ({todo, toggleSelect, toggleComplete}) => {
             <p>{todo.time.toDateString()}</p>
         </div>
         <Button 
-            className='ml-auto'
+            style={{marginLeft: "auto"}}
+            // className='ml-auto'
             color={todo.isComplete ? 'danger' : 'success'}
             onClick={() => toggleComplete(todo.id)}
         >

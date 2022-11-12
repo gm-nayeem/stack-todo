@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const ViewController = ({ view, changeView }) => {
     return (
         <div className='d-flex'>
-            <Label for='list-view' className='mr-4'>
+            <Label for='list-view' style={{marginRight: "10px"}}>
                 <Input
                     type='radio'
                     name='view'
@@ -17,7 +17,7 @@ const ViewController = ({ view, changeView }) => {
                 />
                 List View
             </Label>
-            <Label for='table-view' className='mr-4'>
+            <Label for='table-view'>
                 <Input
                     type='radio'
                     name='table'

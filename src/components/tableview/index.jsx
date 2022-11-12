@@ -22,7 +22,8 @@ const RowItem = ({ todo, toggleSelect, toggleComplete }) => {
             </td>
             <td>
                 <Button
-                    className='ml-auto'
+                    style={{marginLeft: "auto"}}
+                    //className='ml-auto'
                     color={todo.isComplete ? 'danger' : 'success'}
                     onClick={() => toggleComplete(todo.id)}
                 >
