@@ -12,7 +12,7 @@ export default class Todos extends Component {
   state = {
     todos: [
       {
-        id: '101',
+        id: shortid.generate(),
         text: 'text1',
         description: 'this is text one',
         time: new Date(),
@@ -20,7 +20,7 @@ export default class Todos extends Component {
         isSelect: false
       },
       {
-        id: '102',
+        id: shortid.generate(),
         text: 'text2',
         description: 'this is text two',
         time: new Date(),
@@ -28,7 +28,7 @@ export default class Todos extends Component {
         isSelect: false
       },
       {
-        id: '103',
+        id: shortid.generate(),
         text: 'main todo task',
         description: 'this is text three',
         time: new Date(),

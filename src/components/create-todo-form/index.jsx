@@ -44,7 +44,7 @@ export default class CreateTodoForm extends Component {
                 onChange={this.handleChange}
             />
         </FormGroup>
-        <Button type='submit'>Create Task</Button>
+        <Button type='submit' className='btn-success'>Create Task</Button>
       </Form>
     )
   }
